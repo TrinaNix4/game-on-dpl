@@ -12,5 +12,31 @@ User.destroy_all
 u1 = User.create(email:'test1@test.com', password:123456)
 u2 = User.create(email:'test2@test.com', password:123456)
 
+cat = ['playstation', 'playstation 2', 'playstation 3', 'playstation 4', 'playstation 5',
+'Xbox', 'Xbox 360', 'PC', 'Xbox One', 'Nintendo', 'Xbox series X']
 
-  
+5.times do 
+  s = Seller.create(
+    name: Faker::Name.name,
+    email: Faker::Internet.email,
+  )
+
+ 3.times do 
+    num_desired_cat=rand(0..cat.length - 1);
+     Buyer.create(
+      name: Faker::Name.name,
+      max_price: Faker::Number.decimal(l_digits: 2),
+      desired_cat: cat.sample(num_desired_cat),
+      seller_id: s.id,
+    )
+  end
+3.times do
+  p = Product.create(
+    name: Faker::Game.title,
+    category: cat.sample,
+    price: Faker::Number.decimal(l_digits: 2),
+    description: Faker::Game.genre,
+    seller_id: s.id,
+  )
+end
+end
