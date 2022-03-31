@@ -3,4 +3,5 @@ class Product < ApplicationRecord
 
   def self.available
     select('product.id, name, price, description, category, s.id AS seller_id')
+  end
 end
