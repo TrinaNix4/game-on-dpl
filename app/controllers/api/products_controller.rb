@@ -1,5 +1,5 @@
 class Api::ProductsController < ApplicationController
   def index
-    render json: Product.available
+    render json: Product.sellers
   end
 end
