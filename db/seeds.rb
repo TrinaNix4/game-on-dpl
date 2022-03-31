@@ -1,4 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
+   # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
 # Examples:
@@ -30,6 +30,7 @@ cat = ['playstation', 'playstation 2', 'playstation 3', 'playstation 4', 'playst
       seller_id: s.id,
     )
   end
+  
 3.times do
   p = Product.create(
     name: Faker::Game.title,
