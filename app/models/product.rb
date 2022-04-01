@@ -15,4 +15,14 @@ class Product < ApplicationRecord
       .joins('INNER JOIN sellers s ON s.id = products.seller_id')
       .order('s.id')
   end
+  def self.categories
+    select('products.id, 
+    products.name, 
+    products.price, 
+    products.description, 
+    products.category,'
+    )
+    end
+
+
 end

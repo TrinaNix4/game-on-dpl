@@ -9,7 +9,8 @@ import NoMatch from './components/shared/NoMatch';
 import HomeClass from './components/shared/HomeClass';
 import FetchUser from './components/shared/FetchUser';
 import ProtectedRoute from './components/shared/ProtectRoute';
-import Sellers from './components/Sellers';
+import Products from './components/Pages/Products';
+
 // Fetch user: it is going to see if the user is logged in(valid user)
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
             <Route path='/login' element={<Login />}/>
             <Route path='/register' element={<Register />}/>
             <Route path='/' element={<Home />}/>
-            <Route path='/products' element={<Sellers/>}/>
+            <Route path='/products' element={<Products/>}/>
            
                 {/* protected in routes inside of here you need to logged in*/}
                 {/* else you go to login page*/}
