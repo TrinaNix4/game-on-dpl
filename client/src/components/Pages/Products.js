@@ -38,7 +38,8 @@ const Products = (props) => {
   const renderData = () => {
     return sellersProducts.map((seller) => {
       return (
-        <ListGroup.Item>
+        <ListGroup>
+          <ListGroup.Item>
           <div>
             <h1>{seller.name}</h1>
             <p>{seller.email}</p>
@@ -54,6 +55,8 @@ const Products = (props) => {
             <tbody>{renderRows(seller.products)}</tbody>
           </Table>
         </ListGroup.Item>
+        </ListGroup>
+        
       );
     });
   };

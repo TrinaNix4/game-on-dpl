@@ -15,6 +15,7 @@ class Product < ApplicationRecord
       .joins('INNER JOIN sellers s ON s.id = products.seller_id')
       .order('s.id')
   end
+
   def self.categories
     select('products.id, 
     products.name, 
@@ -22,7 +23,15 @@ class Product < ApplicationRecord
     products.description, 
     products.category,'
     )
-    end
+  end
 
+  def self.find(buyer_id)
+    products = select("DISTINCT products.id, 
+    products.name AS game,
+    products.category,
+    products.description")
+    .joins("INNER JOIN buyers b ON products.seller_id = b.seller_id")
+    .where("b.id = #{buyer_id}")
+  end
 
 end
