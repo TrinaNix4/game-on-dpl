@@ -12,7 +12,8 @@ class Product < ApplicationRecord
       s.name AS seller_name,
       s.email 
       ')
-      .joins('INNER JOIN sellers s ON s.id = products.seller_id')
+      .joins('INNER JOIN sellers s 
+      ON s.id = products.seller_id')
       .order('s.id')
   end
   def self.categories
