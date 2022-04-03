@@ -13,8 +13,8 @@ const Navbar = () => {
     }
     return (
       <>
-        <Link to="/login">login</Link>
-        <Link to="/register">register</Link>
+        <Link className="Nav-link" to="/login">login</Link>
+        <Link className="Nav-link" to="/register">register</Link>
       </>
     );
   };
@@ -23,7 +23,7 @@ const Navbar = () => {
     if (auth.user) {
       return (
         <>
-          <Link to="/home">Home Protected</Link>
+          <Link className="Nav-link" to="/home">Home Protected</Link>
         </>
       );
     }
@@ -31,8 +31,9 @@ const Navbar = () => {
   return (
     <div style={{ display: "flex", justifyContent: "space-between" }}>
       <div>
-        <Link to="/">Home</Link>
-        <Link to="/Products">Products</Link>
+        <Link className="Nav-link" to="/">Home</Link>
+        <Link className="Nav-link" to="/categories">Categories</Link>
+        <Link className="Nav-link" to="/products">Products</Link>
         {renderLeft()}
 
       </div>

@@ -4,7 +4,6 @@ import { ListGroup, Table } from "react-bootstrap"
 
 
 const Products = (props) => {
-
   const [products, setProducts] = useState([]);
   const [sellersProducts, setSellersProducts] = useState([])
   const [loading, setLoading] = useState(true)
@@ -27,7 +26,7 @@ const Products = (props) => {
   const renderRows = (products) => {
     return products.map((p) => {
       return (
-        <tr>
+        <tr key={p.id}>
           <td>{p.name}</td>
           <td>{p.description}</td>
           <td>{p.price}</td>
@@ -38,9 +37,12 @@ const Products = (props) => {
   const renderData = () => {
     return sellersProducts.map((seller) => {
       return (
+
         <ListGroup.Item>
           <div>
-            <h1>{seller.name}</h1>
+      <hr></hr>
+          <h1>Seller:</h1>
+            <h2>{seller.name}</h2>
             <p>{seller.email}</p>
           </div>
           <Table striped bordered hover variant="dark">

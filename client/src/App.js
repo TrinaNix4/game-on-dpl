@@ -10,6 +10,7 @@ import HomeClass from './components/shared/HomeClass';
 import FetchUser from './components/shared/FetchUser';
 import ProtectedRoute from './components/shared/ProtectRoute';
 import Products from './components/Pages/Products';
+import Categories from './components/Pages/Category';
 
 // Fetch user: it is going to see if the user is logged in(valid user)
 function App() {
@@ -25,6 +26,7 @@ function App() {
             <Route path='/register' element={<Register />}/>
             <Route path='/' element={<Home />}/>
             <Route path='/products' element={<Products/>}/>
+            <Route path='/categories' element={<Categories/>}/>
            
                 {/* protected in routes inside of here you need to logged in*/}
                 {/* else you go to login page*/}
