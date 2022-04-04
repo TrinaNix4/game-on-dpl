@@ -7,14 +7,21 @@ const Navbar = () => {
   //   const {user} = useContext(AuthContext);
   //    if(user) => logout
   //    if(!user) => login/register
+
+  const linkStyle = {
+    margin: "5px",
+    textDecoration: "none",
+    color: "white",
+  }
+
   const renderRightNav = () => {
     if (auth.user) {
       return <button onClick={auth.handleLogout}>Logout</button>;
     }
     return (
       <>
-        <Link to="/login">login</Link>
-        <Link to="/register">register</Link>
+        <Link to="/login" style={linkStyle}>login</Link>
+        <Link to="/register" style={linkStyle}>register</Link>
       </>
     );
   };
@@ -29,10 +36,11 @@ const Navbar = () => {
     }
   };
   return (
-    <div style={{ display: "flex", justifyContent: "space-between" }}>
+    <div style={{ display: "flex", justifyContent: "space-between", fontFamily: "Comfortaa", padding: "10px", background: "#222529"}}>
       <div>
-        <Link to="/">Home</Link>
-        <Link to="/Products">Products</Link>
+        <Link to="/" style={linkStyle}>Home</Link>
+        <Link to="/Products" style={linkStyle}>Products</Link>
+        <Link to="/find" style={linkStyle}>Find Product</Link>
         {renderLeft()}
 
       </div>

@@ -4,9 +4,9 @@ class Seller < ApplicationRecord
 
   def self.sellers
     sellers = select("DISTINCT id, name")
-    sellers.map do |seller|
-      seller.id
-    end
+    # sellers.map do |seller|
+    #   seller.id
+    # end
   end
 
 end
