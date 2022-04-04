@@ -5,9 +5,11 @@ Rails.application.routes.draw do
 
 namespace :api do
   get 'products', to: 'products#index'
-  get '/products/sellers', to: 'products#sellers'
-  get '/products/:seller_id', to: 'products#buyers'
-  get '/products/:seller_id/:buyer_id', to: 'products#find'
+ 
+  get '/sellers', to:'sellers#index'
+  get '/sellers/:id', to:'sellers#show'
+
+  get '/buyers/:id', to:'buyers#show'
   
 end
 

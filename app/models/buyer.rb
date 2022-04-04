@@ -2,21 +2,14 @@ class Buyer < ApplicationRecord
   belongs_to :seller
   serialize :desired_cat, Array
 
-  def self.buyers(seller_id)
-    buyers = select("DISTINCT buyers.id, buyers.name, buyers.seller_id")
-    .joins("INNER JOIN sellers s ON buyers.seller_id = s.id")
-    .where("s.id = #{seller_id}")
+  def self.my_products(id)
+    select("buyers.name, p.id, p.name, p.price, p.description, p.category")
+    .joins("INNER JOIN products AS p ON buyers.seller_id = p.seller_id")
+    .where("buyers.id = ?", id)
   end
 
-  # def self.buyers(seller_id)
-  #   buyers = select("buyers.name AS buyer_name,
-  #     buyers.id AS buyer_id, 
-  #     buyers.seller_id AS seller_id")
-  #     .joins("INNER JOIN sellers s ON buyers.seller_id = s.id")
-  #     .where("s.id = #{seller_id}")
-  #     buyers.map do |buyer|
-  #       buyers.id
-  #     end
-  # end
+  def my_products
+    {id:self.id, desired_cat:self.desired_cat}
+  end
 
 end
