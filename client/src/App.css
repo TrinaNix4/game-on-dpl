@@ -23,7 +23,9 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
+.Nav-link {
+  margin: 5px; 
+}
 .App-link {
   color: #61dafb;
 }

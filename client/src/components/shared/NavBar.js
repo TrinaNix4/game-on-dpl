@@ -30,7 +30,7 @@ const Navbar = () => {
     if (auth.user) {
       return (
         <>
-          <Link to="/home">Home Protected</Link>
+          <Link className="Nav-link" to="/home">Home Protected</Link>
         </>
       );
     }
@@ -40,8 +40,8 @@ const Navbar = () => {
       <div>
         <Link to="/" style={linkStyle}>Home</Link>
         <Link to="/Products" style={linkStyle}>Products</Link>
+        <Link className="Nav-link" to="/categories" style={linkStyle}>Categories</Link>
         <Link to="/find" style={linkStyle}>Find Product</Link>
-        {renderLeft()}
 
       </div>
       <div>{renderRightNav()}</div>
