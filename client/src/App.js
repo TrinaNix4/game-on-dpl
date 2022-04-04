@@ -29,6 +29,8 @@ function App() {
             <Route path='/products' element={<Products/>}/>
             <Route path='/categories' element={<Categories/>}/>
             <Route path='/find' element={<FindProduct/>}/>
+            <Route path='/products/:seller_id' element={<FindProduct/>}/>
+            
            
                 {/* protected in routes inside of here you need to logged in*/}
                 {/* else you go to login page*/}
