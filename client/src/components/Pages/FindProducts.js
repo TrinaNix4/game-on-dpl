@@ -29,16 +29,16 @@ const FindProducts = () => {
       }
   }
 
-    // const getBuyers = async(e) => {
-    //     let id = e.target.value
-    //     console.log("seller id: ", id)
-    //     try{
-    //         let res = await axios.get(`/api/sellers/${id}`)
-    //     setBuyers(res.data)
-    //     }catch(err){
-    //         alert('error')
-    //     }
-    // }
+    const getBuyers = async(e) => {
+        let id = e.target.value
+        console.log("seller id: ", id)
+        try{
+            let res = await axios.get(`/api/sellers/${id}`)
+        setBuyers(res.data)
+        }catch(err){
+            alert('error')
+        }
+    }
     
     const getProducts = async(e) => {
         let id = e.target.value
@@ -54,7 +54,7 @@ const FindProducts = () => {
 
     const renderSellerSelect = () => {
         return (
-            <Form.Select defaultValue={'DEFAULT'} label='Select' onChange={getProducts} aria-label="Select Seller">
+            <Form.Select defaultValue={'DEFAULT'} label='Select' onChange={getBuyers} aria-label="Select Seller">
                 <option value="DEFAULT" disabled hidden>Please choose a Seller...</option>
                 {sellers.map((seller) => (
                     <option key={seller.id} value={seller.id}>{seller.name}</option>
@@ -63,16 +63,16 @@ const FindProducts = () => {
         )
     };
 
-    // const renderBuyerSelect = () => {
-    //     return(
-    //         <Form.Select defaultValue={'DEFAULT'} label='Select' onChange={getProducts} aria-label="Select Buyer">
-    //         <option value="DEFAULT" disabled hidden>Please Choose a Buyer...</option>
-    //         {buyers.map((buyer) =>(
-    //             <option key={buyer.id} value={buyer.id}>{buyer.name}</option>
-    //         ))}
-    //         </Form.Select>
-    //     );
-    // };
+    const renderBuyerSelect = () => {
+        return(
+            <Form.Select defaultValue={'DEFAULT'} label='Select' onChange={getProducts} aria-label="Select Buyer">
+            <option value="DEFAULT" disabled hidden>Please Choose a Buyer...</option>
+            {buyers.map((buyer) =>(
+                <option key={buyer.id} value={buyer.id}>{buyer.name}</option>
+            ))}
+            </Form.Select>
+        );
+    };
 
     const renderProducts = () => {
         if(!products){
@@ -102,12 +102,12 @@ const FindProducts = () => {
             {/* do I have sellers? if yes, render the method */}
                 {sellers && renderSellerSelect()}
                 {/* {JSON.stringify(sellers)} */}
-            {/* <p>Buyers:</p>
-                {buyers && renderBuyerSelect()}  */}
+            <p>Buyers:</p>
+                {buyers && renderBuyerSelect()} 
                  {/* {JSON.stringify(buyers)} */}
-            <p>Products:</p>
+            {/* <p>Products:</p>
             {renderProducts()}
-              {JSON.stringify(products)} 
+              {JSON.stringify(products)}  */}
         </div>
     );
     };

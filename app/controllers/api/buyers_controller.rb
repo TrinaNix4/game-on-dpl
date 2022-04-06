@@ -2,7 +2,7 @@ class Api::BuyersController < ApplicationController
 #as a  class method
     def show 
         buyer = Buyer.find(params[:id])
-        render json: Buyer.my_products(buyer.id)
+        render json: Buyer.my_products(buyer.id, buyer.desired_cat)
         #not finding a buyer, just calling it on the Buyer class 
         #and passing it a buyer 
     end

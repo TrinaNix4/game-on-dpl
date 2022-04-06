@@ -20,24 +20,25 @@ cat = ['Playstation', 'Playstation 2', 'Playstation 3', 'Playstation 4', 'Playst
     name: Faker::Name.name,
     email: Faker::Internet.email,
   )
+  
+  5.times do 
+     num_cat=rand(1..cat.length - 3);
+      Buyer.create(
+       name: Faker::Name.name,
+       max_price: Faker::Number.decimal(l_digits: 2),
+       desired_cat: cat.sample(num_cat),
+       seller_id: s.id,
+     )
+   end
 
- 3.times do 
-    num_desired_cat=rand(0..cat.length - 1);
-     Buyer.create(
-      name: Faker::Name.name,
-      max_price: Faker::Number.decimal(l_digits: 2),
-      desired_cat: cat.sample(num_desired_cat),
+  15.times do
+    p = Product.create(
+      name: Faker::Game.title,
+      category: cat.sample,
+      price: Faker::Number.decimal(l_digits: 2),
+      description: Faker::Game.genre,
       seller_id: s.id,
     )
   end
-  
-3.times do
-  p = Product.create(
-    name: Faker::Game.title,
-    category: cat.sample,
-    price: Faker::Number.decimal(l_digits: 2),
-    description: Faker::Game.genre,
-    seller_id: s.id,
-  )
-end
+
 end
