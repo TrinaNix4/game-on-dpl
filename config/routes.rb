@@ -9,7 +9,11 @@ namespace :api do
   get '/sellers', to:'sellers#index'
   get '/sellers/:id', to:'sellers#show'
 
+  #class method
   get '/buyers/:id', to:'buyers#show'
+  #instance method 
+  get '/buyers1/:id', to:'buyers#show1'
+
   
 end
 

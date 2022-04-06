@@ -20,8 +20,8 @@ const Navbar = () => {
     }
     return (
       <>
-        <Link to="/login" style={linkStyle}>login</Link>
-        <Link to="/register" style={linkStyle}>register</Link>
+        <Link to="/login" style={linkStyle}>Login</Link>
+        <Link to="/register" style={linkStyle}>Register</Link>
       </>
     );
   };
@@ -41,7 +41,7 @@ const Navbar = () => {
         <Link to="/" style={linkStyle}>Home</Link>
         <Link to="/Products" style={linkStyle}>Products</Link>
         <Link className="Nav-link" to="/categories" style={linkStyle}>Categories</Link>
-        <Link to="/find" style={linkStyle}>Find Product</Link>
+        <Link to="/find_products" style={linkStyle}>Find Products</Link>
 
       </div>
       <div>{renderRightNav()}</div>

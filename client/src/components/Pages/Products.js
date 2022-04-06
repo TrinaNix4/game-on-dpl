@@ -13,11 +13,12 @@ const Products = (props) => {
     let uniqueIds = [...new Set(sellers)];
     let sellersProductsData = uniqueIds.map((uid) => {
       let products = rawProducts.filter((rp) => uid == rp.seller_id);
-      let { seller_name, email } = products[0];
+      let { seller_name, seller_id, email } = products[0];
       return {
         name: seller_name,
         email: email,
-        products: products
+        products: products,
+        id: seller_id 
       }
     })
     return sellersProductsData;
@@ -35,13 +36,13 @@ const Products = (props) => {
     });
   };
   const renderData = () => {
+    
     return sellersProducts.map((seller) => {
       return (
-        <ListGroup>
+        <ListGroup key={seller.id}>
         <ListGroup.Item>
           <div>
       <hr></hr>
-          <h1>Seller:</h1>
             <h2>{seller.name}</h2>
             <p>{seller.email}</p>
           </div>
@@ -86,6 +87,7 @@ useEffect(() => {
 
   return (  
    <div>
+   <h1>Welcome to our Sellers Page!</h1>
      <ListGroup>{renderData()}</ListGroup>
    <p>{JSON.stringify(products)}</p>
    

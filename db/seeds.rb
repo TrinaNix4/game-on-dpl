@@ -12,8 +12,8 @@ User.destroy_all
 u1 = User.create(email:'test1@test.com', password:123456)
 u2 = User.create(email:'test2@test.com', password:123456)
 
-cat = ['playstation', 'playstation 2', 'playstation 3', 'playstation 4', 'playstation 5',
-'Xbox', 'Xbox 360', 'PC', 'Xbox One', 'Nintendo', 'Xbox series X']
+cat = ['Playstation', 'Playstation 2', 'Playstation 3', 'Playstation 4', 'Playstation 5',
+'Xbox', 'Xbox 360', 'PC', 'Xbox One', 'Nintendo', 'Xbox Series X']
 
 5.times do 
   s = Seller.create(

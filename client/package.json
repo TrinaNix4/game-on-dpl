@@ -19,6 +19,8 @@
     "web-vitals": "^2.1.0",
     "yarn": "^1.22.18"
   },
+    "proxy": "http://localhost:3001",
+
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
