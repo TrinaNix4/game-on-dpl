@@ -55,7 +55,7 @@ const FindProducts = () => {
     const renderSellerSelect = () => {
         return (
             <Form.Select defaultValue={'DEFAULT'} label='Select' onChange={getBuyers} aria-label="Select Seller">
-                <option value="DEFAULT" disabled hidden>Please choose a Seller...</option>
+                <option value="DEFAULT" disabled hidden>Please Choose...</option>
                 {sellers.map((seller) => (
                     <option key={seller.id} value={seller.id}>{seller.name}</option>
 ))}
@@ -66,7 +66,7 @@ const FindProducts = () => {
     const renderBuyerSelect = () => {
         return(
             <Form.Select defaultValue={'DEFAULT'} label='Select' onChange={getProducts} aria-label="Select Buyer">
-            <option value="DEFAULT" disabled hidden>Please Choose a Buyer...</option>
+            <option value="DEFAULT" disabled hidden>Please Choose...</option>
             {buyers.map((buyer) =>(
                 <option key={buyer.id} value={buyer.id}>{buyer.name}</option>
             ))}
@@ -96,18 +96,25 @@ const FindProducts = () => {
     }
 
     return(
-        <div>
-            <h1>Find Products by Seller</h1>
-            <p>Sellers:</p>
+        <div className='page'>
+            <h1>Find Games by Seller and Buyer</h1>
+
+            <h4>Seller:</h4>
             {/* do I have sellers? if yes, render the method */}
+                <p>
                 {sellers && renderSellerSelect()}
+                </p>
                 {/* {JSON.stringify(sellers)} */}
-            <p>Buyers:</p>
+            <h4>Buyer:</h4>
+                <p>
                 {buyers && renderBuyerSelect()} 
+                </p>
                  {/* {JSON.stringify(buyers)} */}
-            {/* <p>Products:</p>
+            <h4>Purchased Games:</h4>
+            <p>
             {renderProducts()}
-              {JSON.stringify(products)}  */}
+            </p>
+              {/* {JSON.stringify(products)}  */}
         </div>
     );
     };

@@ -39,12 +39,13 @@ const Products = (props) => {
     
     return sellersProducts.map((seller) => {
       return (
+        <div className='list'>
         <ListGroup key={seller.id}>
         <ListGroup.Item>
           <div>
-      <hr></hr>
+      {/* <hr></hr> */}
             <h2>{seller.name}</h2>
-            <p>{seller.email}</p>
+            <p style={{ marginLeft: '5px' }}>{seller.email}</p>
           </div>
           <Table striped bordered hover variant="dark">
             <thead>
@@ -58,6 +59,7 @@ const Products = (props) => {
           </Table>
         </ListGroup.Item>
         </ListGroup>
+        </div>
         
       );
     });
@@ -86,10 +88,10 @@ useEffect(() => {
   if (loading) return <p>Loading</p>;
 
   return (  
-   <div>
-   <h1>Welcome to our Sellers Page!</h1>
+   <div className='page'>
+   <h1>Games by Seller</h1>
      <ListGroup>{renderData()}</ListGroup>
-   <p>{JSON.stringify(products)}</p>
+   {/* <p>{JSON.stringify(products)}</p> */}
    
   </div>
   )

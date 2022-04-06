@@ -13,3 +13,54 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+h1 {
+  font-family: 'Comfortaa';
+  color: #181818;
+  
+}
+
+h2 {
+  color: #994ff3;
+  padding-top: 10px;
+}
+
+h4 {
+  font-family: 'Comfortaa';
+  color: #994ff3;
+  margin-left: 10px;
+}
+
+p {
+  font-family: 'Comfortaa';
+  color: #2e2e2e
+}
+
+.nav_link {
+    margin: 15px;
+    text-decoration: none;
+    color: #4fc4cf;
+}
+
+.nav_link:hover {
+  color: #994ff3;
+}
+
+.page {
+  padding: 15px;
+  background-color: #fffffe
+}
+
+.list {
+  font-family: 'Comfortaa'
+}
+
+.home_link {
+  color: #994ff3;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.home_link:hover {
+  color: #4fc4cf;
+}

@@ -41,7 +41,7 @@ function App() {
           </Routes>
         </>
       </FetchUser>
-      <p>Footer for all pages</p>
+      <p style={{ padding: '10px', display: 'flex', justifyContent: 'center', background: '#181818', color: '#4fc4cf', fontFamily: 'Comfortaa' }}>GAME ON</p>
     </div>
   );
 }

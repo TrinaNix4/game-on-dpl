@@ -74,10 +74,16 @@ return (
       );
    };
       return (
-    <div>
-      <h1>Categories</h1>
+    <div className='page'>
+      <h1>Games by Category</h1>
+
+      <h4>Select Category:</h4>
+      <p>
       {getSelect()}
+      </p>
+      <p>
       {renderFilteredCategoryProducts()}
+      </p>
     </div>
   );
 };
