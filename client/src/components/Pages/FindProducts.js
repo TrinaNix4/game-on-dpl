@@ -55,7 +55,7 @@ const FindProducts = () => {
     const renderSellerSelect = () => {
         return (
             <Form.Select defaultValue={'DEFAULT'} label='Select' onChange={getBuyers} aria-label="Select Seller">
-                <option value="DEFAULT" disabled hidden>Please Choose...</option>
+                <option value="DEFAULT" disabled hidden>Select a Seller...</option>
                 {sellers.map((seller) => (
                     <option key={seller.id} value={seller.id}>{seller.name}</option>
 ))}
@@ -66,7 +66,7 @@ const FindProducts = () => {
     const renderBuyerSelect = () => {
         return(
             <Form.Select defaultValue={'DEFAULT'} label='Select' onChange={getProducts} aria-label="Select Buyer">
-            <option value="DEFAULT" disabled hidden>Please Choose...</option>
+            <option value="DEFAULT" disabled hidden>Select a Buyer...</option>
             {buyers.map((buyer) =>(
                 <option key={buyer.id} value={buyer.id}>{buyer.name}</option>
             ))}
@@ -76,7 +76,7 @@ const FindProducts = () => {
 
     const renderProducts = () => {
         if(!products){
-            return <p>Please select a seller first</p>
+            return <p>To view purchase history, please choose a seller and buyer</p>
         }
         if(products.length === 0) {
             return <p>no products available </p>
@@ -97,7 +97,7 @@ const FindProducts = () => {
 
     return(
         <div className='page'>
-            <h1>Find Games by Seller and Buyer</h1>
+            <h1>Purchase History</h1>
 
             <h4>Seller:</h4>
             {/* do I have sellers? if yes, render the method */}
