@@ -35,7 +35,7 @@ const Navbar = () => {
         <Link to="/" className='nav_link'>Home</Link>
         <Link to="/products" className='nav_link'>Products</Link>
         <Link to="/categories" className='nav_link'>Categories</Link>
-        <Link to="/find_products" className='nav_link'>Find Products</Link>
+        <Link to="/find_products" className='nav_link'>Purchase History</Link>
 
       </div>
       <div>{renderRightNav()}</div>
