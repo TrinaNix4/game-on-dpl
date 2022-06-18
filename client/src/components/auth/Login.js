@@ -14,7 +14,7 @@ const Login = ()=>{
     }
     return (
         <div>
-            <h1>Login YOYOYO</h1>
+            <h1>Login Below</h1>
             <form onSubmit={handleSubmit}>
                 <p>email</p>
                 <input value={email} onChange={(e)=> setEmail(e.target.value)}/>
