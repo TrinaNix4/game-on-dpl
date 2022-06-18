@@ -32,9 +32,9 @@ const renderSelect = (categories) => {
       <Form.Select defaultValue={'DEFAULT'}
         label='Select'  
         onChange={handleSelect} 
-        aria-label="Select Category">
+        aria-label="Select Console">
         <option value="DEFAULT" 
-        disabled hidden>Please Choose...</option>
+        disabled hidden>Select a console...</option>
         {categories.map((category) => (
           <option value={category}>{category}</option>
         ))}
@@ -75,9 +75,9 @@ return (
    };
       return (
     <div className='page'>
-      <h1>Games by Category</h1>
+      <h1>Games by Console</h1>
 
-      <h4>Select Category:</h4>
+      <h4>Please Select a Console:</h4>
       <p>
       {getSelect()}
       </p>
