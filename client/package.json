@@ -19,8 +19,11 @@
     "web-vitals": "^2.1.0",
     "yarn": "^1.22.18"
   },
-    "proxy": "http://localhost:3001",
-
+  "scripts": {
+  "build": "cd client && npm install --only=dev && npm install && npm run build && cd ..",
+  "deploy": "cp -a client/build/. public/",
+  "heroku-postbuild": "npm run build && npm run deploy && echo 'Client Built'"
+},
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -44,5 +47,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "devDependencies": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
